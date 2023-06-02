@@ -29,7 +29,11 @@
           </div>
         </div>
         <div class="col-lg-6">
-          <h1 class="text-center">Your Tasks</h1>
+          <% if @user == current_user %>
+            <h1 class="text-center">Your Tasks</h1>
+          <% elsif current_user.admin? %>
+            <h1 class="text-center">User Tasks</h1>
+          <% end %>
           <%= render 'tasks/task' %>
         </div>
   <% else %>
