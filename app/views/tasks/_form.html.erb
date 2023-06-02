@@ -3,37 +3,37 @@
 </div>
 <div class="container text-white" id="cntbkng"> 
   <div class="row justify-content-center">
-    <div class="col-7">
+    <div class="col-12  justify-content-center">
       <%= form_with(model: @task, local: true) do |form| %>
         <div class="form-group row">
           <%= form.label :title, class: "col-6 col-form-label text-dark " %>
-          <div class="col-14">
+          <div class="col-10">
             <%= form.text_field :title, class: "form-control shadow mb-4 bg-white rounded", placeholder: "Title of Task (min 6 characters)" %>
           </div>
         </div>
         <div class="form-group row">
           <%= form.label :description, class: "col-6 col-form-label text-dark" %>
-          <div class="col-14"> 
+          <div class="col-10"> 
             <%= form.text_area :description, rows: 10, class: "form-control shadow mt-2 mb-4 bg-white rounded", placeholder: "Description of Task (min 10 characters)" %>
           </div>
         </div>
         <div class="form-group row">
           <%= form.label :task_start_time, class: "col-6 col-form-label text-dark " %>
-          <div class="col-14"> 
+          <div class="col-10"> 
             <%= form.datetime_field :task_start_time, class: "form-control shadow mb-4 bg-white rounded", placeholder: "Enter the date and time of starting the task", min: Time.now.in_time_zone("Asia/Kolkata").strftime('%Y-%m-%dT%H:%M') %>
           </div>
         </div>
         <div class="form-group row">
           <%= form.label :task_end_time, class: "col-6 col-form-label text-dark " %>
-          <div class="col-14"> 
+          <div class="col-10"> 
             <%= form.datetime_field :task_end_time, class: "form-control shadow mb-4 bg-white rounded", placeholder: "Enter the date and time of ending the task", min: Time.now.in_time_zone("Asia/Kolkata").strftime('%Y-%m-%dT%H:%M')%>
           </div>
         </div>
-        <div class="input-group justify-content-center mb-3">
+        <div class="input-group justify-content-left mb-3">
           <%= form.submit"Confirm !", class: "btn btn-outline-dark btn-lg text-center " %>
         </div>
       <% end %>
     </div>
   </div>
 </div>
-<h2 class="text-center mt-3"> <%= link_to "Cancel and Return to all Tasks",tasks_path, class: "btn btn-primary" %> </h2>
+<h2 class="mt-2"> <%= link_to "Cancel and Return to all Tasks",tasks_path, class: "btn btn-primary" %> </h2>
