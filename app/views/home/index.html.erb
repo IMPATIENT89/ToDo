@@ -1,0 +1,43 @@
+<body style="background-color: grey;">
+<div id = "page-content">
+  <div class="container" id="home-container">
+    <div class="jumbotron text-center text-lead">
+      <h1 class="mt-5">To Do</h1>
+      <p>
+        "ToDo" is a powerful and intuitive task management app designed to help you stay organized and increase productivity.</p>
+      <p>
+        With its user-friendly interface and robust features, managing your tasks, deadlines, and priorities has never been easier.
+      </p>
+      <hr class="my-4">
+      <p>
+        "ToDo" empowers you to take control of your tasks and achieve your goals.
+      </p>
+      <p>
+        Whether it's managing personal tasks, work projects, or team collaboration, "ToDo" provides the tools you need to streamline your workflow and accomplish more with ease.
+      </p>
+      <p>
+        Stay organized, stay focused, and stay on top of your tasks with "ToDo."
+      </p>
+      <% if logged_in_as_user? %>
+        <p class="lead">
+          <%= link_to "Create New Task", new_task_path, class: "btn btn-success btn-lg"%>
+        </p>
+        <p class="lead">
+          <%= link_to "Show all your tasks", tasks_path, class: "btn btn-info btn-lg"%>
+        </p>
+      <% else %>
+        <p class="lead">
+          <%= link_to "Sign Up!", new_user_path, class: "btn btn-success btn-lg" %>
+        </p>  
+        <p class="lead">
+          <%= link_to "Sign In!", sign_in_path, class: "btn btn-success btn-lg" %>
+        </p>  
+      <% end %>
+      
+    </div>
+  </div>
+</div>
+</body>
+
+
+

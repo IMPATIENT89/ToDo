@@ -1,0 +1,40 @@
+<body class="signbody" id="accntbody">  
+  <% if @user == current_user || current_user.admin%>
+  <div class="container-fluid mt-5" style="overflow-x: auto;">
+    <div class="row justify-content-center">
+        <div class="col-lg-2 mt-5 " >
+          <div class="card shadow mb-3" id="accntcard">
+            <div class="card-body">
+            
+            <% if @user == current_user %> 
+              <h4 class="card-title mb-2 text-center"> Your Details</h4>
+            <% elsif current_user.admin? %>  
+              <h4 class="card-title mb-2 text-center"> User Details</h4>  
+            <% end %>
+              <div class="user-info text-center mt-2">
+                <p class="user-name"> <%= @user.username %></p>
+                <p class="user-email"><%= @user.email %></p>
+                <hr>
+              </div>
+              <div class="bkngs-link text-center">
+                <hr>
+                
+                <% if @user == current_user %>
+                  <%= link_to "Update Profile", edit_user_path, class: "text-dark"%><hr>
+                <% else %>
+                  
+                <% end %>
+              </div>   
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <h1 class="text-center">Your Tasks</h1>
+          <%= render 'tasks/task' %>
+        </div>
+  <% else %>
+    <%= link_to "Please login with your account to access your vehicles", sign_in_path %>
+  <% end %>
+  
+</body>
+
