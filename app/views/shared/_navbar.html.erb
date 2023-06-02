@@ -16,7 +16,9 @@
           <li class="nav-item">
             <%= link_to "Create new task", new_task_path, class: "nav-link active"%>
           </li>
-          
+          <li class="nav-item">
+            <%= link_to "My profile", current_user, class:"nav-link" %>
+          </li>
           <% if current_user.admin? %>
             <%= link_to "Show all users", users_path, class: "nav-link active"%>
           <% end %>
@@ -29,10 +31,6 @@
             <%= link_to "Sign In!", sign_in_path, class: "nav-link active"%>
           </li>
         <% end %>
-        
-        <li class="nav-item">
-          <%= link_to "My profile", current_user, class:"nav-link" %>
-        </li>
       </ul>
     </div>
   </div>
