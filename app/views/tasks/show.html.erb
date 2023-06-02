@@ -2,14 +2,15 @@
 <h2 class="text-center mt-4"><%= @task.title %></h2>
 <div class="container">
 <div class="row justify-content-md-center">
-    <div class="col-8 mt-4">
+    <div class="col-lg-6 mt-4">
       <div class="card text-center shadow mb-5 bg-white rounded">
         <div class="card-header ">
           Task by <%= @task.user.username if @task.user %>   
         </div>
         <div class="card-body">
           <div class="card-text text-center text-start">
-            <p class="text-dark">Description of task: <%=(@task.description) %></p>
+            <p class="text-dark">Description of task: </p>
+            <p><%=(@task.description) %></p>
           </div>
           <div class="card-text text-center text-start">Task Start Date & Time: <%= @task.task_start_time %></div>
           <div class="card-text text-center text-start">Task End Date & Time: <%= @task.task_end_time %></div>
